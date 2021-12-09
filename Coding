@@ -1,0 +1,11 @@
+from PIL import Image
+import requests
+from io import BytesIO
+
+url = 'https://raw.githubusercontent.com/TeoOG/Computer_Vision_Assistance/master/images/image1.jpg'
+
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
+
+
+img.show()
